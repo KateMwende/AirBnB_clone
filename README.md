@@ -20,7 +20,7 @@ Quit console - (hbnb) quit
 (hbnb) help
 
 Documented commands (type help <topic>):
-=====================================
+==
 EOF  help  quit
 
 (hbnb) 
