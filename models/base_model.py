@@ -7,7 +7,7 @@ import uuid
 
 
 class BaseModel:
-    def __init__(self, id):
+    def __init__(self):
         """Initializes the Base model class attributes
         Args:
             id - identification number
@@ -19,11 +19,9 @@ class BaseModel:
 
     def __str__(self):
         """Return strings of class name, id and dictionary of attributes"""
-        
+
         return ("[{}] ({}) {}".format(self.__class__.__name__,
-                                      self.id, self__dict__))
-
-
+                                      self.id, self.__dict__))
 
     def save(self):
         """update updated_at with the current datetime"""
@@ -31,7 +29,7 @@ class BaseModel:
         self.updated_at = datetime.now()
 
     def to_dict(self):
-        """returns a dictionary containing all keys/values of __dict__ of the instance"""
+        """returns all keys/values of __dict__ of the instance"""
 
         d = self.__dict__.copy()
         d['__class'] = self.__class__.__name__
