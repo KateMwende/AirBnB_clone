@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 """serializes instances to a JSON file and deserializes JSON file to instances"""
 
-from models.basemodel import BaseModel
+import BaseModel
 import json
 
 class FileStorage:
