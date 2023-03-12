@@ -36,13 +36,11 @@ class FileStorage:
     def reload(self):
         """deserializes the JSON file to __objects"""
 
-        dict_dict = {}
-
         try:
-        temp_dict = {}
-        with(self.__file_path. "r") as r:
-            json.load(temp_dict, r)
+            temp_dict = {}
+            with(self.__file_path, "r") as r:
+                json.load(temp_dict, r)
 
-        self.__objects = temp_dict
+            self.__objects = temp_dict
         except Exception:
             pass
