@@ -1,11 +1,17 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """serializes instances
 to a JSON file and deserializes JSON file to instances
 """
 
 import json
-from os import path
-
+from models.user import User
+from models.base_model import BaseModel
+from models.amenity import Amenity
+from models.city import City
+from models.place import Place
+from models.review import Review
+from models.state import State
+import os
 
 class FileStorage:
     """serializes instances to a
@@ -40,8 +46,7 @@ class FileStorage:
 
     def reload(self):
         """deserializes the JSON file to __objects"""
-
-        dict_of_dicts = {}
+        dict_ofi_dicts = {}
         classes = {
             "BaseModel": BaseModel,
             "User": User,
