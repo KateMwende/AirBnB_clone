@@ -8,12 +8,12 @@ class HBNBCommand(cmd.Cmd):
 
     prompt = "(hbnb)"
 
-     def emptyline(self):
+    def emptyline(self):
         """do nothing when empty line"""
         pass
 
     def do_quit(self, line):
-        """ Quit command to exit the command interpreter """
+        """ Quit command to exit the program"""
         return True
 
     def do_EOF(self, line):
