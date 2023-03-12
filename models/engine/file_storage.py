@@ -4,6 +4,14 @@ to a JSON file and deserializes JSON file to instances
 """
 
 import json
+from models.base_model import BaseModel
+from models.user import User
+from models.amenity import Amenity
+from models.city import City
+from models.place import Place
+from models.review import Review
+from models.state import State
+from os import path
 
 
 class FileStorage:
@@ -40,11 +48,23 @@ class FileStorage:
     def reload(self):
         """deserializes the JSON file to __objects"""
 
+        dict_of_dicts = {}
+        classes = {
+            "BaseModel": BaseModel,
+            "User": User,
+            "Amenity": Amenity,
+            "City": City,
+            "Place": Place,
+            "Review": Review,
+            "State": State}
+
         try:
             temp_dict = {}
-            with(self.__file_path, "r") as r:
-                json.load(temp_dict, r)
-
+            with open(self.__file_path, "r") as r:
+                dict_of_dicts = json.load(r)
+            for k, v in dict_of_dicts.items():
+                if v['__class__'] in classes:
+                    temp_dict[k] = classes[v['__class__']](**v)
             self.__objects = temp_dict
         except Exception:
             pass
