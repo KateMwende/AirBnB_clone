@@ -40,7 +40,7 @@ class TestBaseModel(unittest.TestCase):
 
         self.b1.name = "Marc"
         self.b2.name = "Tywan"
-        self.assertEqual(self.1.name, "Marc")
+        self.assertEqual(self.b1.name, "Marc")
         self.assertEqual(self.b2.name, "Tywan")
         self.assertNotEqual(self.b1.name, self.b2.name)
 
