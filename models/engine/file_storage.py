@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
-"""serializes instances to a JSON file and deserializes JSON file to instances"""
+"""serializes instances
+to a JSON file and deserializes JSON file to instances
+"""
 
 import json
 
+
 class FileStorage:
-    """serializes instances to a JSON file and deserializes JSON file to instances"""
+    """serializes instances to a
+    JSON file and deserializes JSON file to instances
+    """
 
     __file_path = 'file.json'
     __objects = {}
@@ -20,7 +25,7 @@ class FileStorage:
            obj - the class type
         """
 
-        key = "{}.{}",format(obj.__class.__name__,obj.id)
+        key = "{}.{}".format(obj.__class__.__name__, obj.id)
         self.__objects[key] = obj
 
     def save(self):

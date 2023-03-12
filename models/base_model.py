@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 """Base class to inherit from"""
 
-
 from datetime import datetime
 import uuid
-import storage
+from models import storage
 
 
 class BaseModel:
