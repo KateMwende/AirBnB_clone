@@ -46,7 +46,7 @@ class FileStorage:
 
     def reload(self):
         """deserializes the JSON file to __objects"""
-        dict_ofi_dicts = {}
+        dict_of_dicts = {}
         classes = {
             "BaseModel": BaseModel,
             "User": User,
