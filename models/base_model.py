@@ -3,7 +3,6 @@
 
 from datetime import datetime
 import uuid
-import models
 
 
 class BaseModel:
@@ -14,6 +13,7 @@ class BaseModel:
             *args - will not be used
             **kwargs - dictionary arguments
         """
+        from models import storage
 
         if kwargs and kwargs is not {}:
             for k, v in kwargs.items():
@@ -28,7 +28,7 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
-            models.storage.new(self)
+            storage.new(self)
 
     def __str__(self):
         """Return strings of class name, id and dictionary of attributes"""
@@ -38,9 +38,10 @@ class BaseModel:
 
     def save(self):
         """update updated_at with the current datetime"""
+        from models import storage
 
         self.updated_at = datetime.now()
-        models.storage.save()
+        storage.save()
 
     def to_dict(self):
         """returns all keys/values of __dict__ of the instance"""
