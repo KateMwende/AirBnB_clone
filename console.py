@@ -57,7 +57,7 @@ class HBNBCommand(cmd.Cmd):
         on the class name and id
         """
 
-        if not line:
+        if not line or line == "":
             print("** class name missing **")
         args = line.split()
         if len(args) == 2:
@@ -82,7 +82,7 @@ class HBNBCommand(cmd.Cmd):
         (save the change into the JSON file)
         """
 
-        if not line:
+        if not line or line == "":
             print("** class name missing **")
         args = line.split()
         if len(args) == 2:
