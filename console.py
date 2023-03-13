@@ -10,6 +10,7 @@ from models.amenity import Amenity
 from models.state import State
 from models.review import Review
 
+
 class HBNBCommand(cmd.Cmd):
     """Command processor"""
 
@@ -51,7 +52,7 @@ class HBNBCommand(cmd.Cmd):
             my_model = dct[line]()
             print(my_model.id)
             my_model.save()
-    
+
     def do_show(self, line):
         """Prints the string representation of an instance based
         on the class name and id
@@ -61,7 +62,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         args = line.split()
         if len(args) == 2:
-             if args[0] in self.classes:
+            if args[0] in self.classes:
                 key = args[0] + '.' + args[1]
                 rec_of_instances = storage.all()
                 if key not in rec_of_instances:
@@ -70,12 +71,12 @@ class HBNBCommand(cmd.Cmd):
                 else:
                     print(rec_of_instances[key])
                     return
-             else:
+            else:
                 print("** class doesn't exist **")
                 return
         elif len(args) == 1:
-                print("** instance id missing **")
-                return
+            print("** instance id missing **")
+            return
 
     def do_destroy(self, line):
         """Deletes an instance based on the class name and id
@@ -93,8 +94,7 @@ class HBNBCommand(cmd.Cmd):
                 del rec_of_instance[key]
                 storage.save()
         elif len(args) == 1:
-                print("** instance id missing **")
-
+            print("** instance id missing **")
 
     def do_all(self, line):
         """Prints all string representation of all instances
@@ -115,7 +115,6 @@ class HBNBCommand(cmd.Cmd):
             if line_list[0] == v.__class__.__name__:
                 key_list.append(v.__str__())
         print(key_list)
-
 
     def do_update(self, line):
         """Updates an instance based on the class name and id by
@@ -158,6 +157,7 @@ class HBNBCommand(cmd.Cmd):
                 else:
                     setattr(rec_of_instances[key], args[2], a3)
                     storage.save()
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
