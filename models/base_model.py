@@ -46,7 +46,7 @@ class BaseModel:
         """returns all keys/values of __dict__ of the instance"""
 
         d = self.__dict__.copy()
-        d['__class'] = self.__class__.__name__
+        d['__class__'] = self.__class__.__name__
         d['created_at'] = self.created_at.isoformat()
         d['updated_at'] = self.updated_at.isoformat()
 
