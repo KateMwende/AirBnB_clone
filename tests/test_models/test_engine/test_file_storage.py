@@ -8,7 +8,7 @@ import os
 import json
 
 
-class FileStorageTests(unittest.TestCase):
+class TestFileStorage(unittest.TestCase):
     """ Suite of File Storage Tests """
 
     my_model = BaseModel()
