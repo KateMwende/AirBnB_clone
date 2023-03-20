@@ -1,10 +1,9 @@
 header {
 	background-color: white;
-	background-image:url("../images/logo.png");
+	background-image: url("../images/logo.png");
+	background-position: 20px center;
 	height: 70px;
 	width: 100%;
-	align-text: center;
 	border bottom 1px #CCCCCC;
 	bottom: 0;
-	justify-content: center;
 }
