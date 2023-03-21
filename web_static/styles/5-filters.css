@@ -24,13 +24,14 @@
 	opacity: .9;
 }
 
-.locations .amenities {
+.locations, .amenities {
 	height: 100%;
 	width: 25%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        position: relative;
+	margin-left: 30px;
+}
+
+.filters div:first-child {
+    border-right: solid #DDDDDD 1px;
 }
 
 .locations {
@@ -39,11 +40,11 @@
 
 .locations h3, .amenities h3 {
     font-weight: 600;
-    margin: 0 0 2px 20px;
+    margin: 12px 10px 0px 10px;
 }
 
 .locations h4, .amenities h4 {
     font-weight: 400;
     font-size: 14px;
-    margin: 2px 0 0 20px;
+    margin: 6px 10px 6px 10px;
 }
